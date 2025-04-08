@@ -183,6 +183,7 @@ cython_debug/
 
 # Output
 logs/
+tokenizer/
 output/
 model/
 tmp/

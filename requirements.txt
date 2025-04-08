@@ -1,12 +1,13 @@
 # Core
 torch>=2.6.0
-transformers>=4.30
-datasets
+transformers==4.38.0
+datasets==2.19.0
 pillow
 opencv-python
 tqdm
+scikit-learn
 pandas
-accelerate  # обов’язково для TrOCR
+accelerate==0.26.1  # для сумісності з transformers>=4.38 обов’язково для TrOCR
 tensorboard  # для логування через report_to="tensorboard"
 
 # Доп. якщо потрібно обробляти PDF або робити передобробку

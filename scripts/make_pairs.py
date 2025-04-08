@@ -6,9 +6,6 @@ import csv
 # Конфігурація: словник з наборами даних
 DATASETS = {
     "english_philosophy": "data/english_philosophy",
-    "alphabet": "data/regular_samples/alphabet",
-    "roman_numerals": "data/regular_samples/roman_numerals",
-    "symbols": "data/regular_samples/symbols",
 }
 
 # Підготовка вихідного CSV
