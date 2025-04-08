@@ -1,0 +1,14 @@
+# Core
+torch>=2.6.0
+transformers>=4.30
+datasets
+pillow
+opencv-python
+tqdm
+pandas
+accelerate  # обов’язково для TrOCR
+tensorboard  # для логування через report_to="tensorboard"
+
+# Доп. якщо потрібно обробляти PDF або робити передобробку
+scikit-image
+python-Levenshtein

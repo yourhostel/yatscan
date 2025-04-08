@@ -186,4 +186,5 @@ logs/
 output/
 model/
 tmp/
+*.csv
 
