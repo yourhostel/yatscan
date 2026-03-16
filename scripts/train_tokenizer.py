@@ -29,4 +29,4 @@ tokenizer.train([str(f) for f in files], trainer)
 Path("tokenizer").mkdir(exist_ok=True)
 tokenizer.save("tokenizer/tokenizer.json")
 
-print("✅ Токенізатор збережено у ./tokenizer/tokenizer.json")
+print("Токенізатор збережено у ./tokenizer/tokenizer.json")
