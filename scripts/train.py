@@ -41,7 +41,7 @@ df = pd.read_csv("dataset.csv")
 # Розбиваємо дані на тренувальні та валідаційні (наприклад 80%/20%)
 train_data, val_data = train_test_split(df, test_size=0.2, random_state=42)
 
-# 💡 Дивимось найчастіші тексти
+# Дивимось найчастіші тексти
 # print(train_data["text"].value_counts().head(10))
 
 # Створюємо HuggingFace-датасети
@@ -116,7 +116,7 @@ trainer = Seq2SeqTrainer(
     model=model,                                  # Наша модель TrOCR
     args=training_args,                           # Аргументи навчання (гіперпараметри)
     train_dataset=train_dataset,                  # Навчальний датасет
-    eval_dataset=eval_dataset,                    # Валідаційний датасет — для оцінки після кожної епохи
+    eval_dataset=eval_dataset,                    # Валідаційний датасет - для оцінки після кожної епохи
     tokenizer=tokenizer,                          # Кастомний токенізатор (ВАЖЛИВО!)
     data_collator=default_data_collator           # Коллатор — щоб зібрати батчі (додає паддінг і т.д.)
 )
@@ -124,8 +124,7 @@ trainer = Seq2SeqTrainer(
 # Старт тренування
 trainer.train()
 
-
-# ✨ Генеруємо приклади передбачення після тренування
+# Генеруємо приклади передбачення після тренування
 print("\n=== ПРИКЛАД ПЕРЕДБАЧЕННЯ ===")
 
 # Беремо один приклад із eval
@@ -142,8 +141,8 @@ decoded_text = tokenizer.decode(generated_ids[0], skip_special_tokens=True)
 # Оригінальний текст
 original_text = tokenizer.decode([id for id in sample["labels"] if id != -100], skip_special_tokens=True)
 
-print(f"🖼️ Original : {original_text}")
-print(f"🤖 Predicted: {decoded_text}")
+print(f" Original : {original_text}")
+print(f" Predicted: {decoded_text}")
 
 # Оновлюємо vocab_size на розмір кастомного токенізатора
 model.config.vocab_size = tokenizer.vocab_size
